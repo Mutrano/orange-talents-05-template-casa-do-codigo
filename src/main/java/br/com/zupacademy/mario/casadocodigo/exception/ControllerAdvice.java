@@ -27,6 +27,7 @@ public class ControllerAdvice {
 			erroDeValidacao.addErro(new CampoMensagem(campo,mensagemPadrao));
 		});
 		
+		
 		return ResponseEntity.badRequest().body(erroDeValidacao);
 	}
 }

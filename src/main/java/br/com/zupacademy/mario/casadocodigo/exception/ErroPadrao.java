@@ -36,6 +36,4 @@ public class ErroPadrao {
 	public String getCaminho() {
 		return caminho;
 	}
-	
-	
 }
