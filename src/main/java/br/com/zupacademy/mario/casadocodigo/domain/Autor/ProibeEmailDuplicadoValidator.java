@@ -24,7 +24,6 @@ public class ProibeEmailDuplicadoValidator implements Validator {
 			return;
 		}
 		var autor = (CadastroAutorForm) target;
-		System.out.println(autor.getEmail());
 		Optional<Autor> emailDuplicado = autorRepository.findByEmail(autor.getEmail());
 		if(emailDuplicado.isPresent()) {
 			errors.rejectValue("email", null, "email já cadastrado no sistema");
