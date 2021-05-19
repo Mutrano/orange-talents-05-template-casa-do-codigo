@@ -1,4 +1,4 @@
-package br.com.zupacademy.mario.casadocodigo.domain.Autor;
+package br.com.zupacademy.mario.casadocodigo.domain.Categoria;
 
 import javax.validation.Valid;
 
@@ -11,29 +11,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
-
 @RestController
-@RequestMapping("/Autores")
-public class AutorController {
+@RequestMapping("/Categorias")
+public class CategoriaController {
+
+	@Autowired 
+	private CategoriaRepository categoriaRepository;
 	
 	@Autowired
-	private AutorRepository autorRepository;
+	private ProibeNomeDuplicadoValidator proibeNomeDuplicadoValidator;
 	
-	@Autowired
-	private ProibeEmailDuplicadoValidator proibeEmailDuplicadoValidator;
-	
-	@InitBinder(value = "cadastroAutorForm")
-	void initBind(WebDataBinder webDataBinder) {
-		webDataBinder.addValidators(proibeEmailDuplicadoValidator);
+	@InitBinder("cadastroCategoriaForm")
+	void initBind(WebDataBinder binder) {
+		binder.addValidators(proibeNomeDuplicadoValidator);
 	}
 	
-	
 	@PostMapping
-	public ResponseEntity<Void> CriaAutor(@RequestBody @Valid  CadastroAutorForm form) {
-		var autor = form.toModel();
-		autorRepository.save(autor);
-		
+	private ResponseEntity<Void> cadastraCategoria(@RequestBody @Valid CadastroCategoriaForm form){
+		var categoria = form.toModel();
+		categoriaRepository.save(categoria);
 		return ResponseEntity.ok().build();
 	}
 }
