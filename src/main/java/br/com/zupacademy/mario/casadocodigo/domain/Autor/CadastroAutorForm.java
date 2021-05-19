@@ -6,11 +6,14 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
+import br.com.zupacademy.mario.casadocodigo.domain.validation.UniqueValue;
+
 public class CadastroAutorForm {
 	
 	@NotBlank(message="O nome não pode ser vazio")
 	private String nome;
 	
+	@UniqueValue(entidade = Autor.class,campo="email",message="email ja existente")
 	@NotBlank(message="O email não pode ser vazio")
 	@Email(message="O email deve ser válido")
 	private String email;

@@ -2,8 +2,10 @@ package br.com.zupacademy.mario.casadocodigo.domain.Categoria;
 
 import javax.validation.constraints.NotBlank;
 
+import br.com.zupacademy.mario.casadocodigo.domain.validation.UniqueValue;
+
 public class CadastroCategoriaForm {
-	
+	@UniqueValue(entidade = Categoria.class,campo = "nome",message="nome ja existente")
 	@NotBlank(message="o nome nao pode ser vazio")
 	private String nome;
 	
