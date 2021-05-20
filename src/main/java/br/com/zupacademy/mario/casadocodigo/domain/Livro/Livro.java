@@ -82,24 +82,4 @@ public class Livro {
 		this.categoria = categoria;
 		this.autor = autor;
 	}
-  /*  Título é obrigatório
-    Título é único
-    Resumo é obrigatório e tem no máximo 500 caracteres
-    Sumário é de tamanho livre.
-    Preço é obrigatório e o mínimo é de 20
-    Número de páginas é obrigatória e o mínimo é de 100
-    Isbn é obrigatório, formato livre
-    Isbn é único
-    Data que vai entrar no ar precisa ser no futuro
-    A categoria não pode ser nula
-    O autor não pode ser nulo
-    
-    */
-	
-	public Autor getAutor() {
-		return autor;
-	}
-	public Categoria getCategoria() {
-		return categoria;
-	}
 }
