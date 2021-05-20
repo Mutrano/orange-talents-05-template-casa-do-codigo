@@ -1,4 +1,4 @@
-package br.com.zupacademy.mario.casadocodigo.domain.validation;
+package br.com.zupacademy.mario.casadocodigo.domain.shared;
 
 
 import static java.lang.annotation.ElementType.FIELD;
@@ -16,7 +16,7 @@ import javax.validation.Payload;
 @Constraint(validatedBy = {UniqueValueValidator.class})
 public @interface UniqueValue {
 
-	String message() default "br.com.zupacademy.mario.casadocodigo.domain.shared.UniqueValue";
+	String message() default "Valor ja existe no sistema";
 
 	Class<?>[] groups() default { };
 

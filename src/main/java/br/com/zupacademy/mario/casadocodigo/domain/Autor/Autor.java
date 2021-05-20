@@ -13,8 +13,6 @@ import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
-
-
 @Entity
 public class Autor {
 	
@@ -30,20 +28,22 @@ public class Autor {
 	private String email;
 
 	@NotBlank(message = "A descricao não pode ser vazia")
-	@Length(max = 400,message = "A descricao deve ter no máximo 400 caracteres")
+	@Length(max = 400, message = "A descricao deve ter no máximo 400 caracteres")
 	private String descricao;
 
 	@NotNull
 	private LocalDateTime instante;
 
 	@Deprecated
-	public Autor() {}
-	
-	public Autor(@NotEmpty String nome, @NotEmpty @Email String email, @NotEmpty @Length(max = 400)  @NotEmpty String descricao) {
+	public Autor() {
+	}
+
+	public Autor(@NotEmpty String nome, @NotEmpty @Email String email,
+			@NotEmpty @Length(max = 400) @NotEmpty String descricao) {
 		this.nome = nome;
 		this.email = email;
 		this.descricao = descricao;
-		this.instante= LocalDateTime.now();
+		this.instante = LocalDateTime.now();
 	}
 
 }

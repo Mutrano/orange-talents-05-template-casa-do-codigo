@@ -15,7 +15,7 @@ public class Categoria {
 
 	@NotBlank(message = "o nome nao pode ser vazio")
 	private String nome;
-	
+
 	@Deprecated
 	public Categoria() {
 	}

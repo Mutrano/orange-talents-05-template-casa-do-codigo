@@ -6,7 +6,7 @@ import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
 
-import br.com.zupacademy.mario.casadocodigo.domain.validation.UniqueValue;
+import br.com.zupacademy.mario.casadocodigo.domain.shared.UniqueValue;
 
 public class CadastroAutorForm {
 	
