@@ -21,7 +21,7 @@ public class CadastraLivroController {
 	private EntityManager em;
 	
 	@PostMapping
-	ResponseEntity<Void> cadastraLivro(@RequestBody @Valid CadastroLivroForm form){		
+	public ResponseEntity<Void> cadastraLivro(@RequestBody @Valid CadastroLivroForm form){		
 		var livro = form.toModel(em);
 		livroRepository.save(livro);
 		return ResponseEntity.ok().build();
