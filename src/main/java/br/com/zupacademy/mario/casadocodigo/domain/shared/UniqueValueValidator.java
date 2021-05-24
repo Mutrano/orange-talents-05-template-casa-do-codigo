@@ -20,11 +20,9 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
 
 	@Override
 	public boolean isValid(Object value, ConstraintValidatorContext context) {
-		
-		
 		var query = em.createQuery("select 1 from " + entidade.getName() + " where " + campo + "= :pValue");
 		query.setParameter("pValue", value);
-
+		
 		var result = query.getResultList();
 		return result.isEmpty();
 	}
