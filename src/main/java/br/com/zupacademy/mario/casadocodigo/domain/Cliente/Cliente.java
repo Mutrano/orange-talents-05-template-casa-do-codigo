@@ -75,10 +75,5 @@ public class Cliente {
 	public Long getId() {
 		return id;
 	}
-	
-	/*
-	 * email nome sobrenome documento(cpf/cnpj) endereco complemento cidade pais
-	 * estado(caso aquele pais tenha estado) telefone cep
-	 */
 
 }
