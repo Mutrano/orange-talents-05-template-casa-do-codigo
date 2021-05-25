@@ -27,8 +27,6 @@ public class CadastraEstadoController {
 		binder.addValidators(uniqueWithinAnotherValidator);
 	}
 	
-	
-	
 	@Autowired
 	private EntityManager em;
 

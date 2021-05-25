@@ -39,5 +39,9 @@ public class Pais {
 	public Set<Estado> getEstados() {
 		return estados;
 	}
+	
+	public Long getId() {
+		return id;
+	}
 
 }
